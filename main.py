@@ -10,7 +10,21 @@ class Game:
 		self.clock = pygame.Clock()
 		self.running = True
 
+        self.cheracter_spritessheet = Spritessheet('img/caracter.png')
+        self.terrain_spritessheet = Spritessheet('img/terrain.png')
+
+		def createTitlemap(self):
+			for i, row in enumerate(Titlemap)
+              for j, collumn in enumerate(row):
+              	Ground(self, j, i)
+              	if collumn == "B":
+              		block(self, j, i)
+              	if collumn == "P":
+              		player(self, j, i)
+
+			      print(i, row)
 	def new(self):
+         createTitlemap
 		# um novo jogo começa
 		self.playing = True
 
@@ -19,7 +33,7 @@ class Game:
 		self.enemies = pygame.sprite.LayeredUpdates()
 		self.attacks= pygame.sprite.LayeredUpdates()
 
-		self.player = Player(self,0 .1)
+        self.createTitlemap()
 
 		def events(self):
         # game loop evets
