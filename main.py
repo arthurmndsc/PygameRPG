@@ -10,8 +10,8 @@ class Game:
 		self.clock = pygame.Clock()
 		self.running = True
 
-        self.cheracter_spritessheet = Spritessheet('img/caracter.png')
-        self.terrain_spritessheet = Spritessheet('img/terrain.png')
+        self.character_spritesheet = Spritesheet('img/Protect.png')
+        self.terrain_spritesheet = Spritesheet('img/terrain.png')
 
 		def createTitlemap(self):
 			for i, row in enumerate(Titlemap)
