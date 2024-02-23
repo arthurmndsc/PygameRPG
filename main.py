@@ -3,12 +3,11 @@ from sprites import *
 from config import *
 import sys
 
-
 class Game:
-    def init(self):
+    def __init__(self):
         pygame.init()
-        self.screen = pygame.display.set_mode((WIN_WIDTH, WIN_HIGHT))
-        self.clock = pygame.Clock()
+        self.screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
+        self.clock = pygame.time.Clock()
         self.running = True
 
     def new(self):
@@ -22,12 +21,12 @@ class Game:
 
         self.player = Player(self, 0, 1)
 
-        def events(self):
-                # game loop evets
-                for event in pygame.event.get():
-                    if event.type == pygame.QUIT:
-                        self.playing = False
-                        self.running = False
+    def events(self):
+            # game loop evets
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.playing = False
+                    self.running = False
 
     def update(self):
         # game loop updates
@@ -43,23 +42,23 @@ class Game:
     def main(self):
         # game loop
             while self.playing:
-                    self.events()
-                    self.update()
-                    self.draw()
-        self.running = False
+                self.events()
+                self.update()
+                self.draw()
+            self.running = False
 
-     def game_over(self):
-           pass
+    def game_over(self):
+        pass
 
     def intro_screen(self):
-           pass
+        pass
 
-    g = Game()
-    g.intro_screen()
-    g.new()
-    while g.running:
-          g.main()
-          g.game_over()
+g = Game()
+g.intro_screen()
+g.new()
+while g.running:
+    g.main()
+    g.game_over()
 
-          pygame.quit()
-          sys.exit()
+    pygame.quit()
+    sys.exit()
